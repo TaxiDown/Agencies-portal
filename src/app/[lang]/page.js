@@ -19,10 +19,10 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen justify-center font-sans bg-secondary/10">
       <Navbar />
       <div className="w-full h-screen bg-[url('/section1.jpg')] bg-cover bg-center ">
-        <div className="absolute w-full h-full inset-0 top-0 left-0 bg-gradient-to-r from-black/90 to-black/10"></div>
+        <div className="absolute w-full h-screen inset-0 top-0 left-0 bg-gradient-to-r from-black/90 to-black/10"></div>
 
-        <div className="text-white/80 relative z-20 h-full flex flex-col justify-center px-10 lg:px-20 max-w-7xl">
-        <h1 className="uppercase text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+        <div className="text-white/80 relative z-20 h-full flex flex-col justify-center px-10 lg:px-20 max-w-full ">
+        <h1 className="uppercase text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight">
           Simplify Agency <br />
           <span className="text-yellow-600/80">Transportation.</span>
         </h1>
