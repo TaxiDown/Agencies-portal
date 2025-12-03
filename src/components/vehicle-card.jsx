@@ -5,8 +5,8 @@ export default function VehicleCard({ vehicle, isCenter }) {
     return (
         <div className={`w-60 transition-all duration-500 ${isCenter ? "" : ""}`}>
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 h-full">
-                <div className="relative h-30 bg-gradient-to-br from-secondary/10 to-white flex items-center justify-center overflow-hidden">
-                    <img src={vehicle.image_path || "/placeholder.svg"} alt={vehicle.name_category} className="w-[80%] h-max " />
+                <div className="relative h-30 bg-gradient-to-br from-secondary/10 to-white flex items-center justify-center overflow-hidden p-7">
+                    <img src={vehicle.image_path || "/placeholder.svg"} alt={vehicle.name_category} className="object-contain" />
                 </div>
 
                 <div className="p-6">
