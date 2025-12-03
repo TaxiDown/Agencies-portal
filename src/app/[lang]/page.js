@@ -33,7 +33,7 @@ export default async function Home() {
         <div className="mt-10 flex gap-4">
           <button className="group px-6 py-3 gap-2 flex border border-white/50 hover:bg-white/80 hover:text-black transition-all duration-300 ease-out rounded-lg text-sm font-semibold tracking-wide cursor-pointer hover:scale-105">
             <div className="h-5 w-5 rounded-full border-2 border-dashed border-white/50 transition-all duration-300 ease-out group-hover:border-black cursor-pointer group-hover:rotate-90 group-hover:scale-110"></div>
-            <Link href="/booking" className="group-hover:scale-100">
+            <Link href="/" className="group-hover:scale-100">
               REQUEST TO JOIN
             </Link>
           </button>

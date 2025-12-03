@@ -76,9 +76,9 @@ export default function Navbar({ role }) {
         </div>
       </div>
     }
-      <div className={`text-black lg:h-13  flex justify-between  items-center md:pl-10 md:pr-10 pr-3 pl-3 z-1000 ${isMobileMenuOpen ? "bg-white" : "bg-transperent shadow-sm"}  ${isScrolled? "backdrop-blur-md": "backdrop-blur-[2px]"} fixed w-full top-0 left-0 h-15`}>
+      <div className={`text-black lg:h-13  flex justify-between  items-center md:pl-10 md:pr-10 pr-3 pl-3 z-1000 ${isMobileMenuOpen ? "bg-white text-black" : "bg-transperent shadow-sm"}  ${isScrolled? "backdrop-blur-md": "backdrop-blur-[2px]"} fixed w-full top-0 left-0 h-15`}>
         <Link href={`/`} className={`${isScrolled ? "text-black": "text-white/90"} md:text-[19px] text-[15px] font-medium lg:font-bold hover:text-yellow-600 hover:scale-105`}>
-          <h3 className='text-[18px] md:text-[20px] font-bold'>{name}</h3>
+          <h3 className={`text-[18px] md:text-[20px] font-bold  ${isMobileMenuOpen ? "text-black hover:text-yellow-600": ""}`}>{name}</h3>
         </Link>
 
 {/*        <div className="flex gap-4 text-sm items-center ">
@@ -98,7 +98,6 @@ export default function Navbar({ role }) {
           </Link>
         </div>*/}
         <div className="hidden sm:flex items-center gap-2 ">
-          <LanguageSwitcher scrolled={isScrolled}/>
           {loggedIn ? (
             <>
 
@@ -118,7 +117,7 @@ export default function Navbar({ role }) {
                 {dict("loginTitle")}
               </Link>
               <Link
-                href={`/drivers`}
+                href={`/`}
                 className="bg-stone-900 text-white px-4 py-1 rounded-lg text-yellow-1000 text-md font-medium hover:scale-105 cursor-pointer transition-all duration-200"
               >
                 {dict("request")}
@@ -168,9 +167,22 @@ export default function Navbar({ role }) {
                   {dict("logoutTitle")}
                 </button>
               </>
-            ) : <></>}
+            ) : <div className="flex flex-col gap-6">
+            <Link
+              href={`/login`}
+              className={`flex items-center  text-md font-medium lg:font-bold hover:text-yellow-600 transition-all duration-200 "text-black"`}
+            >
+              {dict("loginTitle")}
+            </Link>
+            <Link
+              href={`/`}
+              className="bg-stone-900 text-white px-4 py-1 w-max rounded-lg text-yellow-1000 text-md font-medium hover:scale-105 cursor-pointer transition-all duration-200"
+            >
+              {dict("request")}
+            </Link>
+          </div>}
             <div className="pt-2 border-t border-yellow-1000/20">
-              <LanguageSwitcher />
+            <LanguageSwitcher scrolled={true}/>
             </div>
           </div>
         </div>
