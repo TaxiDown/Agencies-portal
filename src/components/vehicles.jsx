@@ -52,7 +52,7 @@ export default function VehicleCarousel() {
           className="flex gap-6 px-6 pt-10 pb-15"
           style={{
             transform: `translateX(${offset}px)`,
-            transition: "transform 0.3s ease-in-out",
+            transition: "transform 0.3s ease",
           }}
         >
           {/* Render vehicles twice for seamless loop */}
