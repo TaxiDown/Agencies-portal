@@ -8,8 +8,9 @@ export default function VehicleCarousel() {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
+    const speed = window.innerWidth > 700 ? 4 : 6;
     const animationFrame = setInterval(() => {
-      setOffset((prev) => (prev - 2) % (vehicles.length * 3000))
+      setOffset((prev) => (prev - speed) % (vehicles.length * 3000))
     }, 30)
 
     return () => clearInterval(animationFrame)
@@ -51,7 +52,7 @@ export default function VehicleCarousel() {
           className="flex gap-6 px-6 pt-10 pb-15"
           style={{
             transform: `translateX(${offset}px)`,
-            transition: "transform 0.00001s linear",
+            transition: "transform 0.3s linear",
           }}
         >
           {/* Render vehicles twice for seamless loop */}
