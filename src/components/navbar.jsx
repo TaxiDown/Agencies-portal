@@ -98,6 +98,7 @@ export default function Navbar({ role }) {
           </Link>
         </div>*/}
         <div className="hidden sm:flex items-center gap-2 ">
+        <LanguageSwitcher scrolled={isScrolled}/>
           {loggedIn ? (
             <>
 
