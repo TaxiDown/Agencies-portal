@@ -6,17 +6,14 @@ import VehicleCard from "./vehicle-card"
 export default function VehicleCarousel() {
   const [vehicles, setVehicles] = useState([{}]);
   const [offset, setOffset] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
-    if (isPaused) return
-
     const animationFrame = setInterval(() => {
-      setOffset((prev) => (prev - 2) % (vehicles.length * 320))
+      setOffset((prev) => (prev - 2) % (vehicles.length * 3000))
     }, 30)
 
     return () => clearInterval(animationFrame)
-  }, [isPaused])
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +51,7 @@ export default function VehicleCarousel() {
           className="flex gap-6 px-6 pt-10 pb-15"
           style={{
             transform: `translateX(${offset}px)`,
-            transition: isPaused ? "none" : "transform 0.03s linear",
+            transition: "transform 0.00001s linear",
           }}
         >
           {/* Render vehicles twice for seamless loop */}
